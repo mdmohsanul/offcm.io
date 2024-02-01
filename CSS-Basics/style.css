@@ -1,0 +1,31 @@
+
+.el-1{
+    background-color: red;
+}
+.el-2{
+    background: green;
+}
+.el-3{
+    background-color: blue;
+}
+.el-4{
+    background-color: brown;
+}
+.el-5{
+    background-color: yellow;
+}
+.el-6{
+    background-color: grey;
+}
+.el-7{
+    background-color: coral;
+}
+.el-8{
+    background-color: cornflowerblue;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 150px;
+}
