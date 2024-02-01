@@ -125,3 +125,50 @@ function lucy(hour){
 lucy(0);
 lucy(1)
 lucy(3)
+
+
+/*
+Imagine an inter-college quiz competition between the Engineering department and the Science department! The competition format has changed to make it more exciting.
+Each department participates in 3 quiz rounds, and then the average of the 3 scores is calculated (so one average score per department).
+A department ONLY wins if it has at least 1.5 times the average score of the other department. Otherwise, no department wins!
+
+Create an arrow function 'calcAverage' to calculate the average of 3 scores.
+Use the function to calculate the average for both departments.
+Create a function 'declareWinner' that takes the average score of each department as parameters ('avgEngineering' and 'avgScience'), and then logs the winner to the console, along with the victory points, according to the rule above. Example: "Engineering wins (45 vs. 30)".
+Use the 'declareWinner' function to determine the winner for both TEST DATA 1 and TEST DATA 2.
+This time, ignore ties as well.
+TEST DATA 1: Engineering scores 60, 45, and 75. Science scores 66, 55, and 52
+TEST DATA 2: Engineering scores 40, 60, and 80. Science scores 20, 35, and 50
+
+HINT: To calculate the average of 3 values, add them all together and divide by 3.
+HINT: To check if one average score is at least 1.5 times the other, check for A >= 1.5 * B. Apply this to the department's average scores 😉
+
+GOOD LUCK 😀
+*/
+
+const scienceDept = [40, 60,  8];
+const engineeringDept = [20, 35,  50]
+
+const calcAverage = (score) => {
+    let sum = 0;
+    for(let i=0; i < score.length; i++){
+        sum += score[i]
+    }
+    return parseInt(sum/score.length)
+}
+
+const scienceDeptAvg = calcAverage(scienceDept);
+console.log(scienceDeptAvg)
+const engineeringDeptAvg = calcAverage(engineeringDept);
+console.log(engineeringDeptAvg)
+
+// const winner = scienceDeptAvg >= 1.5 * engineeringDeptAvg ? 'Science Dept is winner' : 'Engineering Dept is winner';
+// console.log(winner)
+
+if(scienceDeptAvg >= 1.5*engineeringDeptAvg){
+    console.log('Science Dept is winner')
+}else if(engineeringDeptAvg >= 1.5 * scienceDeptAvg){
+    console.log('Engineering Dept is winner')
+}else{
+    console.log('no winner')
+}
